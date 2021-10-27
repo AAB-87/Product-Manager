@@ -52,7 +52,6 @@
                 <executions>
                     <execution>
                         <id>prepare-agent777777</id>
-                        <!--                        <phase>initialize</phase>-->
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
@@ -61,15 +60,8 @@
                         <id>report888888</id>
                         <goals>
                             <goal>report</goal>
-                            <!--                            <phase>verify</phase>-->
                         </goals>
                     </execution>
-<!--                    <execution>-->
-<!--                        <id>check666666</id>-->
-<!--                        <goals>-->
-<!--                            <goal>check</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
                 </executions>
                 <configuration>
                     <rules>
