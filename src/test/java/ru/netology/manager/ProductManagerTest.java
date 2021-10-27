@@ -3,7 +3,6 @@ package ru.netology.manager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
-import ru.netology.domain.Headphones;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
 import ru.netology.repository.ProductRepository;
@@ -25,7 +24,7 @@ class ProductManagerTest {
     private Product ninth = new Smartphone(9, "Xiaomi Mi 10T Lite", 27000, "Xiaomi");
     private Product tenth = new Smartphone(10, "Samsung Galaxy M22", 19000, "Samsung");
     private Product eleventh = new Smartphone(11, "Samsung Galaxy A51", 17000, "Samsung");
-    private Product twelfth = new Headphones(12, "JBL Tune 500 BT", 2400, "Black");
+    private Product twelfth = new Product(12, "Potato", 50);
 
 
     @BeforeEach
@@ -91,7 +90,7 @@ class ProductManagerTest {
     @Test
     public void shouldSearchByColor() {
         Product[] expected = new Product[]{};
-        Product[] actual = manager.searchBy("Black");
+        Product[] actual = manager.searchBy("Potato");
         assertArrayEquals(expected, actual);
     }
 
