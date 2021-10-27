@@ -1,4 +1,5 @@
 package ru.netology.domain;
+
 import java.util.Objects;
 
 public class Smartphone extends Product { // унаследованный от Product класса Smartphone с полем производитель

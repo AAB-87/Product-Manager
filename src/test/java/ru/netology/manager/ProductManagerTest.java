@@ -1,4 +1,5 @@
 package ru.netology.manager;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
@@ -22,7 +23,7 @@ class ProductManagerTest {
     private Product seventh = new Smartphone(7, "Realme 6 Pro", 22000, "Realme");
     private Product eighth = new Smartphone(8, "vivo V20", 30000, "Vivo");
     private Product ninth = new Smartphone(9, "Xiaomi Mi 10T Lite", 27000, "Xiaomi");
-    private Product tenth = new Smartphone(10, "OnePlus Nord N10 5G", 21000, "OnePlus");
+    private Product tenth = new Smartphone(10, "Samsung Galaxy M22", 19000, "Samsung");
     private Product eleventh = new Smartphone(11, "Samsung Galaxy A51", 17000, "Samsung");
     private Product twelfth = new Headphones(12, "JBL Tune 500 BT", 2400, "Black");
 
@@ -46,53 +47,59 @@ class ProductManagerTest {
     }
 
     @Test
-    public void shouldSearchById() {
+    public void shouldSearchByName() {
         Product[] expected = new Product[]{second};
-        Product[] actual = manager.searchBy ("Лживая взрослая жизнь");
+        Product[] actual = manager.searchBy("Лживая взрослая жизнь");
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldSearchById2() {
+    public void shouldSearchByName2() {
         Product[] expected = new Product[]{eleventh};
-        Product[] actual = manager.searchBy ("Samsung Galaxy A51");
+        Product[] actual = manager.searchBy("Samsung Galaxy A51");
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldSearchById3() {
+    public void shouldSearchByName3() {
         Product[] expected = new Product[]{tenth};
-        Product[] actual = manager.searchBy ("OnePlus Nord N10 5G");
+        Product[] actual = manager.searchBy("Samsung Galaxy M22");
         assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldSearchByAuthor() {
         Product[] expected = new Product[]{fifth};
-        Product[] actual = manager.searchBy ("Филиппа Перри");
+        Product[] actual = manager.searchBy("Филиппа Перри");
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldSearchByName() {
+    public void shouldSearchByName4() {
         Product[] expected = new Product[]{eighth};
-        Product[] actual = manager.searchBy ("vivo V20");
+        Product[] actual = manager.searchBy("vivo V20");
         assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldSearchByManufacturer() {
         Product[] expected = new Product[]{ninth};
-        Product[] actual = manager.searchBy ("Xiaomi");
+        Product[] actual = manager.searchBy("Xiaomi");
         assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldSearchByColor() {
         Product[] expected = new Product[]{};
-        Product[] actual = manager.searchBy ("Black");
+        Product[] actual = manager.searchBy("Black");
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldSearchByNameIfItIsNotTheOnlyOne() {
+        Product[] expected = new Product[]{tenth, eleventh};
+        Product[] actual = manager.searchBy("Samsung");
+        assertArrayEquals(expected, actual);
+    }
 
 }

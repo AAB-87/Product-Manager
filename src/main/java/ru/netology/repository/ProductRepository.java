@@ -1,4 +1,5 @@
 package ru.netology.repository;
+
 import ru.netology.domain.Product;
 
 public class ProductRepository { // репозиторий позволяющий сохранять Product'ы, получать все сохранённые Product'ы и удалять по id
