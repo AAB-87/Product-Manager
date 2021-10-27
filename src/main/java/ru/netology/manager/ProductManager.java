@@ -50,6 +50,6 @@ public class ProductManager { // менеджер который умеет до
             }
             return false;
         }
-        return false;
+        return false; // если в параметре product лежит объект не класса Book и не класса Smartphone, ничего не делать
     }
 }

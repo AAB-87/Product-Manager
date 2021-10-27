@@ -21,26 +21,4 @@ public class Smartphone extends Product { // унаследованный от P
         this.manufacturer = manufacturer;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        if (!super.equals(o)) return false;
-//        Smartphone smartphone = (smartphone) o;
-//        return pages == book.pages &&
-//                publishedYear == smartphone.publishedYear &&
-//                Objects.equals(author, smartphone.author);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(super.hashCode(), author);
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Smartphone{" +
-//                "author='" + author + '\'' +
-//                '}';
-//    }
 }
