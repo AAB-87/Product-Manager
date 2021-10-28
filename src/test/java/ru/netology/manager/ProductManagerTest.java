@@ -88,7 +88,7 @@ class ProductManagerTest {
     }
 
     @Test
-    public void shouldSearchByColor() {
+    public void shouldSearchByProduct() {
         Product[] expected = new Product[]{};
         Product[] actual = manager.searchBy("Potato");
         assertArrayEquals(expected, actual);
